@@ -131,22 +131,34 @@ export default function Home() {
 
 
   function redCarOpen() {
-    setRedCarVisibility(true),
-      setBlueCarVisibility(false),
-      setGreyCarVisibility(false),
-      ColorPallete.classList.toggle('active')
+    if (typeof window !== "undefined") {
+      var ColorPallete = document.querySelector(".car-colors");
+      setRedCarVisibility(true),
+        setBlueCarVisibility(false),
+        setGreyCarVisibility(false),
+        ColorPallete.classList.toggle('active')
+    }
+
   }
   function blueCarOpen() {
-    setRedCarVisibility(false),
-      setBlueCarVisibility(true),
-      setGreyCarVisibility(false),
-      ColorPallete.classList.toggle('active');
+    if (typeof window !== "undefined") {
+      var ColorPallete = document.querySelector(".car-colors");
+      setRedCarVisibility(false),
+        setBlueCarVisibility(true),
+        setGreyCarVisibility(false),
+        ColorPallete.classList.toggle('active');
+    }
+
   }
   function greyCarOpen() {
-    setRedCarVisibility(false),
-      setBlueCarVisibility(false),
-      setGreyCarVisibility(true),
-      ColorPallete.classList.toggle('active')
+    if (typeof window !== "undefined") {
+      var ColorPallete = document.querySelector(".car-colors");
+      setRedCarVisibility(false),
+        setBlueCarVisibility(false),
+        setGreyCarVisibility(true),
+        ColorPallete.classList.toggle('active')
+    }
+
   }
 
   //small sphere tyre
