@@ -127,7 +127,7 @@ export default function Home() {
     );
   };
   //functions
-  if (document) {
+  if (typeof window !== "undefined") {
     const ColorPallete = document.querySelector(".car-colors");
   }
 
@@ -167,7 +167,7 @@ export default function Home() {
   }
   //tyrr
   const tyreOpen = () => {
-    if (document) {
+    if (typeof window !== "undefined") {
       var tireDiv = document.querySelector('.info-container');
       var canvascont = document.querySelector('.canvas-container');
       var roofDiv = document.querySelector('.roof-container');
@@ -202,7 +202,7 @@ export default function Home() {
 
 
   const roofOpen = (e) => {
-    if (document) {
+    if (typeof window !== "undefined") {
       var roofDiv = document.querySelector('.roof-container');
       var canvascont = document.querySelector('.canvas-container');
       var tireDiv = document.querySelector('.info-container');
@@ -220,7 +220,7 @@ export default function Home() {
   };
   //closeDiv
   function closeDiv() {
-    if (document) {
+    if (typeof window !== "undefined") {
       var roofDiv = document.querySelector('.roof-container');
       var canvascont = document.querySelector('.canvas-container');
       var tireDiv = document.querySelector('.info-container');
@@ -241,7 +241,7 @@ export default function Home() {
 
   //interior button
   function openInterior() {
-    if (document) {
+    if (typeof window !== "undefined") {
       var tireDiv = document.querySelector('.info-container');
       var roofDiv = document.querySelector('.roof-container');
       var interiorbutton = document.getElementById("interior");
@@ -268,7 +268,7 @@ export default function Home() {
   }
   //exterior button
   function openExterior() {
-    if (document) {
+    if (typeof window !== "undefined") {
       var tireDiv = document.querySelector('.info-container');
       var roofDiv = document.querySelector('.roof-container');
       var interiorbutton = document.getElementById("interior");
