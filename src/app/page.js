@@ -127,9 +127,7 @@ export default function Home() {
     );
   };
   //functions
-  if (typeof window !== "undefined") {
-    const ColorPallete = document.querySelector(".car-colors");
-  }
+
 
 
   function redCarOpen() {
@@ -235,8 +233,13 @@ export default function Home() {
 
   }
   function OpenSelector() {
-    console.log("color Selector");
-    ColorPallete.classList.toggle('active');
+    if (typeof window !== "undefined") {
+      var ColorPallete = document.querySelector(".car-colors");
+      return (
+        ColorPallete.classList.toggle('active')
+      );
+    }
+
   }
 
   //interior button
