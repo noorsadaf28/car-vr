@@ -127,7 +127,10 @@ export default function Home() {
     );
   };
   //functions
-  const ColorPallete = document.querySelector(".car-colors");
+  if (document) {
+    const ColorPallete = document.querySelector(".car-colors");
+  }
+
 
   function redCarOpen() {
     setRedCarVisibility(true),
@@ -164,20 +167,23 @@ export default function Home() {
   }
   //tyrr
   const tyreOpen = () => {
+    if (document) {
+      var tireDiv = document.querySelector('.info-container');
+      var canvascont = document.querySelector('.canvas-container');
+      var roofDiv = document.querySelector('.roof-container');
 
-    var tireDiv = document.querySelector('.info-container');
-    var canvascont = document.querySelector('.canvas-container');
-    var roofDiv = document.querySelector('.roof-container');
-
-    return (
-      tireDiv.style.display = 'flex',
-      roofDiv.style.display = 'none'
-      , canvascont.style.width = "1028px",
-      setAutorotation(false),
-      camera.position.set(6, 1, -1)
+      return (
+        tireDiv.style.display = 'flex',
+        roofDiv.style.display = 'none'
+        , canvascont.style.width = "1028px",
+        setAutorotation(false),
+        camera.position.set(6, 1, -1)
 
 
-    )
+      )
+    }
+
+
 
   }
   //small sphere roof
@@ -196,30 +202,36 @@ export default function Home() {
 
 
   const roofOpen = (e) => {
-    var roofDiv = document.querySelector('.roof-container');
-    var canvascont = document.querySelector('.canvas-container');
-    var tireDiv = document.querySelector('.info-container');
-    return (
-      roofDiv.style.display = 'flex',
-      tireDiv.style.display = 'none',
-      canvascont.style.width = "1028px",
-      setAutorotation(false),
-      camera.position.set(1, 6, 0)
-    );
+    if (document) {
+      var roofDiv = document.querySelector('.roof-container');
+      var canvascont = document.querySelector('.canvas-container');
+      var tireDiv = document.querySelector('.info-container');
+      return (
+        roofDiv.style.display = 'flex',
+        tireDiv.style.display = 'none',
+        canvascont.style.width = "1028px",
+        setAutorotation(false),
+        camera.position.set(1, 6, 0)
+      );
+
+    }
 
 
   };
   //closeDiv
   function closeDiv() {
-    var roofDiv = document.querySelector('.roof-container');
-    var canvascont = document.querySelector('.canvas-container');
-    var tireDiv = document.querySelector('.info-container');
-    return (
-      roofDiv.style.display = 'none',
-      tireDiv.style.display = 'none'
-      , canvascont.style.width = "100%",
-      setAutorotation(true)
-    );
+    if (document) {
+      var roofDiv = document.querySelector('.roof-container');
+      var canvascont = document.querySelector('.canvas-container');
+      var tireDiv = document.querySelector('.info-container');
+      return (
+        roofDiv.style.display = 'none',
+        tireDiv.style.display = 'none'
+        , canvascont.style.width = "100%",
+        setAutorotation(true)
+      );
+    }
+
 
   }
   function OpenSelector() {
@@ -229,47 +241,52 @@ export default function Home() {
 
   //interior button
   function openInterior() {
+    if (document) {
+      var tireDiv = document.querySelector('.info-container');
+      var roofDiv = document.querySelector('.roof-container');
+      var interiorbutton = document.getElementById("interior");
+      var exteriorbutton = document.getElementById("exterior");
+      const sideBar = document.querySelector('.sidebar');
+      var canvascont = document.querySelector('.canvas-container');
 
-    var tireDiv = document.querySelector('.info-container');
-    var roofDiv = document.querySelector('.roof-container');
-    var interiorbutton = document.getElementById("interior");
-    var exteriorbutton = document.getElementById("exterior");
-    const sideBar = document.querySelector('.sidebar');
-    var canvascont = document.querySelector('.canvas-container');
+      return (
+        camera.position.set(6, 1, 0),
+        setDefaultMesh(false),
+        setInteriorMesh(true),
+        interiorbutton.style.display = "none",
+        exteriorbutton.style.display = "flex",
+        tireDiv.style.display = "none",
+        roofDiv.style.display = "none",
+        sideBar.style.display = "none",
+        canvascont.style.width = "100%",
+        setAutorotation(false)
 
-    return (
-      camera.position.set(6, 1, 0),
-      setDefaultMesh(false),
-      setInteriorMesh(true),
-      interiorbutton.style.display = "none",
-      exteriorbutton.style.display = "flex",
-      tireDiv.style.display = "none",
-      roofDiv.style.display = "none",
-      sideBar.style.display = "none",
-      canvascont.style.width = "100%",
-      setAutorotation(false)
+      );
+    }
 
-    );
 
   }
   //exterior button
   function openExterior() {
-    var tireDiv = document.querySelector('.info-container');
-    var roofDiv = document.querySelector('.roof-container');
-    var interiorbutton = document.getElementById("interior");
-    var exteriorbutton = document.getElementById("exterior");
-    const sideBar = document.querySelector('.sidebar');
+    if (document) {
+      var tireDiv = document.querySelector('.info-container');
+      var roofDiv = document.querySelector('.roof-container');
+      var interiorbutton = document.getElementById("interior");
+      var exteriorbutton = document.getElementById("exterior");
+      const sideBar = document.querySelector('.sidebar');
 
-    return (
-      setDefaultMesh(true),
-      setInteriorMesh(false),
-      interiorbutton.style.display = "flex",
-      exteriorbutton.style.display = "none",
-      tireDiv.style.display = "none",
-      roofDiv.style.display = "none",
-      sideBar.style.display = "flex"
+      return (
+        setDefaultMesh(true),
+        setInteriorMesh(false),
+        interiorbutton.style.display = "flex",
+        exteriorbutton.style.display = "none",
+        tireDiv.style.display = "none",
+        roofDiv.style.display = "none",
+        sideBar.style.display = "flex"
 
-    );
+      );
+    }
+
   }
   //PlayRotation
   function PlayRotation() {
