@@ -1,0 +1,15 @@
+.info-container {
+  order: 1;
+  width: 500px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 300ms ease-in-out;
+}
+
+.close {
+  width: 100px;
+  height: 100px;
+}
