@@ -10,7 +10,7 @@ import { MeshBasicMaterial } from 'three';
 import tyreclose from './functions';
 
 
-//interior sphre
+//interior spehre
 function InteriorSphere() {
   const imageMap = useTexture("/images/interior.jpg");
   return (
@@ -168,7 +168,7 @@ export default function Home() {
         <sphereGeometry attach="geometry" args={[0.15, 32, 16]} />
         <meshBasicMaterial
           color="white"
-          opacity={0.2}
+          opacity={0.5} transparent={true}
 
         />
 
@@ -203,7 +203,8 @@ export default function Home() {
         <sphereGeometry attach="geometry" args={[0.15, 32, 16]} />
         <meshBasicMaterial
           color="white"
-          opacity="0.5"
+          opacity={0.5}
+          transparent={true}
         />
 
       </mesh>
